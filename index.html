@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CodingSyntax Home</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="imgs/CodingSyntax.png">
+    </head>
+    <body class="dark">
+        <button id="dbtn" onclick="darkToggle()" style="padding: 5px; background-color: rgba(40, 40, 70, 0.767); position: fixed; border: none;">
+            <img id="darkmode" src="imgs/moon.png" style="transition: top 0.5s; position: relative; top: 2px; clip-path: inset(0px 0px 0px 0px);">
+        </button>
+        <div class="flex-container">
+            <a title="Go to my github page" href="https://www.github.com/CodingSyntax" style="width: 25%; align-self: center; min-width: 200px"><img src="imgs/CSfulltemp.png"></a>
+            <p class="welcome">Welcome to my website! The following are links to my sites/projects!</p>
+            <p class="section">English 250</p>
+            <a title="My design draft" href="https://codingsyntax.github.io/eng250/draft" class="link">English 250 Draft design</a>
+            <a title="My final design" href="https://codingsyntax.github.io/eng250/final" class="link">English 250 Final design</a>
+        </div>
+    </body>
+
+    <script>
+        var dark = true;
+        var animating = false;
+        var img = document.getElementById("darkmode");
+
+        function updateClip() {
+            var ib = img.getBoundingClientRect().bottom;
+            var bb = document.getElementById("dbtn").getBoundingClientRect().bottom;
+
+            img.style.clipPath = "inset(0px 0px " + (ib - bb + 5) + "px 0px)"
+        }
+
+        async function darkToggle() {
+            if (!animating) { //don't allow the animation to break
+                animating = true;
+                //immediately set the bg color
+                if (dark) document.body.className = "";
+                else document.body.className = "dark";
+
+                img.style.top = "20px";
+                var interval = setInterval(updateClip, 1); //constantly update the bottom clip of the image
+                
+                await new Promise(r => setTimeout(r, 500)); //wait .5 seconds for transition
+                //set the icon
+                if (dark) img.src = "imgs/sun.png";
+                else img.src = "imgs/moon.png";
+
+                img.style.top = "2px";
+                await new Promise(r => setTimeout(r, 500)); //wait .5 seconds for transition
+                //stop updating the clip
+                clearInterval(interval);
+                dark = !dark;
+                animating = false;
+            }
+        }
+    </script>
+</html>
