@@ -19,13 +19,20 @@
     </body>
 
     <script>
+        //cookie names
+        var darkMode = "darkMode";
+
         var dark = true;
         var animating = false;
         var img = document.getElementById("darkmode");
+        //load cookies
+        window.onloadstart = function () {
+            dark = getCookie(darkMode)
+        };
 
         function updateClip() {
-            var ib = img.getBoundingClientRect().bottom;
-            var bb = document.getElementById("dbtn").getBoundingClientRect().bottom;
+            let ib = img.getBoundingClientRect().bottom;
+            let bb = document.getElementById("dbtn").getBoundingClientRect().bottom;
 
             img.style.clipPath = "inset(0px 0px " + (ib - bb + 5) + "px 0px)"
         }
@@ -38,7 +45,7 @@
                 else document.body.className = "dark";
 
                 img.style.top = "20px";
-                var interval = setInterval(updateClip, 1); //constantly update the bottom clip of the image
+                let interval = setInterval(updateClip, 1); //constantly update the bottom clip of the image
                 
                 await new Promise(r => setTimeout(r, 500)); //wait .5 seconds for transition
                 //set the icon
@@ -51,7 +58,24 @@
                 clearInterval(interval);
                 dark = !dark;
                 animating = false;
+                document.cookie = darkMode + "=" + dark;
             }
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
         }
     </script>
 </html>
