@@ -20,14 +20,19 @@
 
     <script>
         //cookie names
-        var darkMode = "darkMode";
+        let darkMode = "darkMode";
 
-        var dark = true;
-        var animating = false;
-        var img = document.getElementById("darkmode");
+        let dark = true;
+        let animating = false;
+        let img = document.getElementById("darkmode");
         //load cookies
         window.onloadstart = function () {
             dark = getCookie(darkMode)
+
+            if (!dark) {
+                document.body.className = "";
+                img.src = "imgs/sun.png";
+            }
         };
 
         function updateClip() {
