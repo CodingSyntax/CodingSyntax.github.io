@@ -21,19 +21,15 @@
     <script>
         //cookie names
         let darkMode = "darkMode";
-
-        let dark = true;
+        //if there is no cookie, defaults to true
+        let dark = getCookie(darkMode) != "false";
         let animating = false;
         let img = document.getElementById("darkmode");
         //load cookies
-        window.onloadstart = function () {
-            dark = getCookie(darkMode) == "true";
-
-            if (!dark) {
-                document.body.className = "";
-                img.src = "imgs/sun.png";
-            }
-        };
+        if (!dark) {
+            document.body.className = "";
+            img.src = "imgs/sun.png";
+        }
 
         function updateClip() {
             let ib = img.getBoundingClientRect().bottom;
