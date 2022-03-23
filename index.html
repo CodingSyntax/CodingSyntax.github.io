@@ -27,7 +27,7 @@
         let img = document.getElementById("darkmode");
         //load cookies
         window.onloadstart = function () {
-            dark = getCookie(darkMode)
+            dark = getCookie(darkMode) == "true";
 
             if (!dark) {
                 document.body.className = "";
