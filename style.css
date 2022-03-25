@@ -30,21 +30,21 @@ img {
     color: var(--primary-color);
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
-    font-size: calc(12px + .5vw);
+    font-size: 1.25em;
     text-align: center;
 }
 
 .section {
     font-family: 'Courier New', Courier, monospace;
     color: var(--primary-color);
-    font-size: calc(15px + .75vw);
+    font-size: 1.5em;
     font-weight: bolder;
     margin: 0;
 }
 
 .link {   
     color: var(--link-color);  
-    font-size: calc(12px + .2vw);
+    font-size: 1.25em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: fit-content;
 }

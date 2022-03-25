@@ -4,13 +4,16 @@
         <title>CodingSyntax Home</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="icon" type="image/png" href="imgs/CodingSyntax.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="dark">
-        <button id="dbtn" onclick="darkToggle()" style="padding: 5px; background-color: rgba(40, 40, 70, 0.767); position: fixed; border: none;">
+        <button id="dbtn" onclick="darkToggle()" style="padding: 5px; background-color: rgba(40, 40, 70, 0.767); position: fixed; border: none; transform: translate(0px, calc(100vh - 45px));">
             <img id="darkmode" src="imgs/moon.png" style="transition: top 0.5s; position: relative; top: 2px; clip-path: inset(0px 0px 0px 0px);">
         </button>
         <div class="flex-container">
-            <a title="Go to my github page" href="https://www.github.com/CodingSyntax" style="width: 25%; align-self: center; min-width: 200px"><img src="imgs/CSfulltemp.png"></a>
+            <a title="Go to my github page" href="https://www.github.com/CodingSyntax" style="align-self: center;">
+                <img src="imgs/CSfulltemp.png" style="max-width: 90%; max-height: 150px; margin-left: 5%;">
+            </a>
             <p class="welcome">Welcome to my website! The following are links to my sites/projects!</p>
             <p class="section">English 250</p>
             <a title="My design draft" href="https://codingsyntax.github.io/eng250/draft" class="link">English 250 Draft design</a>
