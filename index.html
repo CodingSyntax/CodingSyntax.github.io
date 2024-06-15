@@ -6,18 +6,32 @@
         <link rel="icon" type="image/png" href="imgs/CodingSyntax.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body class="dark">
-        <button id="dbtn" onclick="darkToggle()" style="padding: 5px; background-color: rgba(40, 40, 70, 0.767); position: fixed; border: none; transform: translate(0px, calc(100vh - 45px));">
+    
+    <body class="dark" style="margin: 0px;">
+        <button id="dbtn" onclick="darkToggle()" style="margin: 5px; padding: 5px; background-color: rgba(40, 40, 70, 0.767); position: fixed; border: none; transform: translate(0px, calc(100vh - 45px));">
             <img id="darkmode" src="imgs/moon.png" style="transition: top 0.5s; position: relative; top: 2px; clip-path: inset(0px 0px 0px 0px);">
         </button>
-        <div class="flex-container">
-            <a title="Go to my github page" href="https://www.github.com/CodingSyntax" style="align-self: center;">
-                <img src="imgs/CSfulltemp.png" style="max-width: 90%; max-height: 150px; margin-left: 5%;">
-            </a>
-            <p class="welcome">Welcome to my website! The following are links to my sites/projects!</p>
-            <p class="section">English 250</p>
-            <a title="My design draft" href="https://codingsyntax.github.io/eng250/draft" class="link">English 250 Draft design</a>
-            <a title="My final design" href="https://codingsyntax.github.io/eng250/final" class="link">English 250 Final design</a>
+        
+        <div style="position: sticky; display: flex; top: 0px; left: 0px; justify-content: center;">
+            <img src="imgs/background.jpg" style="width: 100%; z-index: -1; object-fit: cover; max-height: 200px;">
+            <div style="background: rgba(27, 27, 27, 0.616); position: absolute; height: -webkit-fill-available; width: -webkit-fill-available;">
+                <a title="Go to my github page" href="https://www.github.com/CodingSyntax" style="position: absolute; display: contents;">
+                    <img src="imgs/CSfulltemp.png" style="max-width: 90%; max-height: 150px; margin-left: 5%; margin-top: 20px; object-fit: scale-down;">
+                </a>
+            </div>
+        </div>
+        
+        <div style="margin: 5px">
+            <div class="flex-container">
+                
+                <p class="welcome">Welcome to my website! The following are links to my sites/projects!</p>
+                <p class="section">English 250</p>
+                <a title="My design draft" href="eng250/draft" class="link">English 250 Draft design</a>
+                <a title="My final design" href="eng250/final" class="link">English 250 Final design</a>
+                <br/>
+                <!-- <p class="section">Other</p>-->
+                <p class="text">This site is a work in progress; more to come later!</p>
+            </div>
         </div>
     </body>
 
